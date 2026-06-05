@@ -22,7 +22,7 @@ export default function Process() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 lg:mb-28">
           <ScrollReveal>
-            <span className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-gold-400 bg-gold-500/8 border border-border-gold rounded-full">
+            <span className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-mint-400 bg-mint-500/8 border border-border-gold rounded-full">
               Metodologia
             </span>
           </ScrollReveal>
@@ -42,7 +42,7 @@ export default function Process() {
         <div className="relative">
           {/* Vertical connecting line (hidden on mobile, centered on desktop) */}
           <div
-            className="absolute left-[31px] md:left-1/2 top-4 bottom-4 w-[1px] bg-gradient-to-b from-gold-500/30 via-border to-transparent -translate-x-1/2"
+            className="absolute left-[31px] md:left-1/2 top-4 bottom-4 w-[1px] bg-gradient-to-b from-mint-500/30 via-border to-transparent -translate-x-1/2"
             aria-hidden="true"
           />
 
@@ -65,16 +65,16 @@ export default function Process() {
                       delay={0.15}
                     >
                       <div
-                        className={`p-8 bg-bg-card border border-border hover:border-border-gold rounded-[var(--radius-card)] transition-all duration-300 relative group hover:shadow-[0_0_30px_rgba(212,175,55,0.05)] ${
+                        className={`p-8 bg-bg-card border border-border hover:border-border-gold-strong rounded-[var(--radius-card)] transition-all duration-300 relative group hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] ${
                           isEven ? 'md:text-right' : 'md:text-left'
                         }`}
                       >
                         {/* Mobile Icon placement */}
                         <div className="flex md:hidden items-center justify-between mb-4">
-                          <div className="size-10 rounded-full border border-border-gold flex items-center justify-center bg-bg-primary text-gold-400">
+                          <div className="size-10 rounded-full border border-border-gold flex items-center justify-center bg-bg-primary text-mint-400">
                             <IconComponent className="size-5" />
                           </div>
-                          <span className="font-display text-sm font-semibold text-gold-500">
+                          <span className="font-display text-sm font-semibold text-mint-500">
                             0{step.step}
                           </span>
                         </div>
@@ -82,7 +82,7 @@ export default function Process() {
                         <div className={`hidden md:flex items-center gap-3 mb-3 justify-end ${
                           isEven ? 'justify-end' : 'flex-row-reverse'
                         }`}>
-                          <span className="font-display text-sm font-semibold text-gold-500/60 group-hover:text-gold-400 transition-colors">
+                          <span className="font-display text-sm font-semibold text-mint-500/60 group-hover:text-mint-400 transition-colors">
                             Etapa 0{step.step}
                           </span>
                         </div>
@@ -100,8 +100,8 @@ export default function Process() {
                   {/* Centered marker (timeline circle) */}
                   <div className="absolute left-[31px] md:left-1/2 top-6 md:top-auto md:left-1/2 -translate-x-1/2 z-10 flex items-center justify-center">
                     <ScrollReveal delay={0.05} duration={0.4}>
-                      <div className="size-16 rounded-full border-2 border-gold-600/50 bg-bg-primary hover:border-gold-500 flex items-center justify-center transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.8)] scale-90 md:scale-100">
-                        <IconComponent className="size-6 text-gold-400" />
+                      <div className="size-16 rounded-full border-2 border-mint-600/50 bg-bg-primary hover:border-mint-500 flex items-center justify-center transition-all duration-300 shadow-[0_0_20px_rgba(0,0,0,0.8)] scale-90 md:scale-100">
+                        <IconComponent className="size-6 text-mint-400" />
                       </div>
                     </ScrollReveal>
                   </div>

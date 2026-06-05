@@ -9,8 +9,8 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
 
 const variantStyles: Record<BadgeVariant, string> = {
   default: [
-    'bg-gold-500/10',
-    'text-gold-400',
+    'bg-mint-500/10',
+    'text-mint-400',
     'border border-border-gold',
   ].join(' '),
   outline: 'bg-transparent text-text-secondary border border-border',

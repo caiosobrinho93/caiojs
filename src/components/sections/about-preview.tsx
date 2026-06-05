@@ -1,117 +1,129 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Hammer, Briefcase, Calendar, Phone } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { Button } from '@/components/ui/button';
-
-// Skill areas displayed as overlapping cards on the right
-const SKILL_AREAS = [
-  { label: 'Sistemas Web', color: 'from-gold-500/20 to-gold-700/10' },
-  { label: 'Projetos', color: 'from-gold-400/15 to-gold-600/10' },
-  { label: 'Design', color: 'from-gold-300/20 to-gold-500/10' },
-  { label: 'Marcenaria', color: 'from-gold-500/15 to-gold-700/5' },
-  { label: 'Automações', color: 'from-gold-400/20 to-gold-600/10' },
-] as const;
-
-const EASE = [0.16, 1, 0.3, 1] as const;
+import { Card } from '@/components/ui/card';
+import { getWhatsAppUrl } from '@/lib/utils';
+import { SITE } from '@/lib/constants';
 
 export default function AboutPreview() {
+  const whatsappUrl = getWhatsAppUrl(
+    SITE.whatsapp,
+    'Olá Caio! Acessei o seu site e gostaria de conversar sobre um projeto.'
+  );
+
   return (
     <section
-      className="py-24 lg:py-32 px-6"
+      className="py-24 lg:py-32 px-6 bg-bg-secondary/40 border-y border-border"
       aria-label="Sobre Caio Sobrinho"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* ── Left: Text content ── */}
-          <div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          {/* ── Left Column: Circular Avatar & Floating Stats ── */}
+          <div className="lg:col-span-5 relative flex items-center justify-center min-h-[380px] sm:min-h-[440px]">
+            {/* Abstract green circle backdrop */}
+            <div 
+              className="absolute size-64 sm:size-80 rounded-full border border-mint-500/20 bg-mint-500/5 -z-10" 
+              aria-hidden="true"
+            />
+            
+            {/* Professional profile avatar card */}
+            <div className="relative size-48 sm:size-56 rounded-full border-2 border-mint-500 bg-bg-card flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+              {/* Silhouette Vector avatar */}
+              <div className="flex flex-col items-center text-center p-4">
+                <Briefcase className="size-12 text-mint-400 mb-2" />
+                <span className="font-display font-bold text-sm text-text-primary">CAIO</span>
+              </div>
+            </div>
+
+            {/* Floating Stat 1: Marcenaria */}
+            <div className="absolute top-[10%] right-[5%] sm:right-[10%] bg-bg-card/90 backdrop-blur border border-border hover:border-mint-500/40 px-4 py-2.5 rounded-xl flex items-center gap-2.5 transition-colors shadow-lg shadow-black/40">
+              <div className="size-8 rounded-lg bg-mint-500/10 flex items-center justify-center text-mint-400">
+                <Hammer className="size-4" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-text-primary">8+ Anos</p>
+                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Marcenaria</p>
+              </div>
+            </div>
+
+            {/* Floating Stat 2: Projetos */}
+            <div className="absolute bottom-[10%] left-[5%] sm:left-[10%] bg-bg-card/90 backdrop-blur border border-border hover:border-mint-500/40 px-4 py-2.5 rounded-xl flex items-center gap-2.5 transition-colors shadow-lg shadow-black/40">
+              <div className="size-8 rounded-lg bg-mint-500/10 flex items-center justify-center text-mint-400">
+                <Briefcase className="size-4" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-text-primary">50+ Entregas</p>
+                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Projetos Ativos</p>
+              </div>
+            </div>
+
+            {/* Floating Stat 3: Gestão */}
+            <div className="absolute bottom-[40%] right-[0%] bg-bg-card/90 backdrop-blur border border-border hover:border-mint-500/40 px-4 py-2.5 rounded-xl flex items-center gap-2.5 transition-colors shadow-lg shadow-black/40">
+              <div className="size-8 rounded-lg bg-mint-500/10 flex items-center justify-center text-mint-400">
+                <Calendar className="size-4" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-text-primary">6+ Anos</p>
+                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Gestão Projetos</p>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Right Column: Text content ── */}
+          <div className="lg:col-span-7">
             <ScrollReveal>
+              <span className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-mint-400 bg-mint-500/8 border border-border-gold rounded-full">
+                Quem Sou Eu
+              </span>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.05}>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-primary leading-tight">
-                Quem está por trás
-                <br />
-                <span className="text-gradient-gold">dos projetos?</span>
+                Sobre <span className="text-gradient-gold">Mim</span>
               </h2>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="mt-6 text-text-secondary text-lg leading-relaxed">
-                Sou um profissional multifuncional que pensa em sistemas e
-                entrega resultados. Com mais de 8 anos em marcenaria planejada e
-                6 anos em gestão de projetos, aprendi que a excelência está nos
-                detalhes — e trouxe essa mentalidade para o mundo digital.
+              <p className="mt-6 text-text-secondary text-sm md:text-base leading-relaxed">
+                Sou um profissional multifuncional que atua na intersecção entre design digital, tecnologia web e gestão. Com 8 anos de experiência consolidada em marcenaria planejada física e 6 anos coordenando projetos, trago a mentalidade de precisão milimétrica e planejamento rigoroso para o ambiente de software.
               </p>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.15}>
+              <p className="mt-4 text-text-muted text-xs md:text-sm leading-relaxed">
+                Desenvolvo sistemas de alta performance, painéis dinâmicos e fluxos automatizados inteligentes focados no resultado real do negócio. Meu compromisso é alinhar design polido e código limpo para entregar produtos que resolvem problemas com excelência de ponta a ponta.
+              </p>
+            </ScrollReveal>
+
+            {/* Buttons row */}
             <ScrollReveal delay={0.2}>
-              <p className="mt-4 text-text-muted text-base leading-relaxed">
-                Hoje atuo na interseção entre design, tecnologia e estratégia.
-                Desenvolvo sistemas web, dashboards empresariais, automações
-                inteligentes e projetos sob medida — sempre com foco em
-                resolver problemas reais e criar soluções que funcionam.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <p className="mt-4 text-text-muted text-base leading-relaxed">
-                Minha abordagem combina visão sistêmica, execução disciplinada e
-                atenção obsessiva à qualidade. Cada projeto é uma oportunidade
-                de superar expectativas.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.4}>
-              <div className="mt-8">
-                <Button variant="ghost" href="/sobre" className="group">
-                  Conhecer mais
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Button
+                  variant="primary"
+                  size="md"
+                  href={whatsappUrl}
+                  className="flex items-center gap-2 justify-center"
+                >
+                  <Phone className="size-4" />
+                  Falar Comigo
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="md"
+                  href="/sobre"
+                  className="flex items-center gap-2 justify-center"
+                >
+                  <span>Conhecer Trajetória</span>
+                  <ArrowRight className="size-4" />
                 </Button>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* ── Right: Stacked skill cards ── */}
-          <ScrollReveal direction="right" delay={0.2}>
-            <div className="relative flex items-center justify-center min-h-[360px] lg:min-h-[420px]">
-              {SKILL_AREAS.map((skill, i) => (
-                <motion.div
-                  key={skill.label}
-                  className={`
-                    absolute w-[260px] sm:w-[280px] h-[72px]
-                    bg-gradient-to-r ${skill.color}
-                    backdrop-blur-sm
-                    border border-border-gold/40
-                    rounded-[var(--radius-card)]
-                    flex items-center justify-center
-                    text-gold-400 font-display font-semibold text-sm tracking-wide
-                    cursor-default select-none
-                  `}
-                  style={{
-                    top: `${i * 60 + 20}px`,
-                    rotate: `${(i - 2) * 3}deg`,
-                    zIndex: SKILL_AREAS.length - i,
-                  }}
-                  initial={{ opacity: 0, x: 40, rotate: `${(i - 2) * 6}deg` }}
-                  whileInView={{ opacity: 1, x: 0, rotate: `${(i - 2) * 3}deg` }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.3 + i * 0.1,
-                    ease: EASE as any,
-                  }}
-                  whileHover={{
-                    scale: 1.04,
-                    rotate: '0deg',
-                    zIndex: 10,
-                    boxShadow: '0 0 30px rgba(212,175,55,0.15)',
-                    transition: { duration: 0.3 },
-                  }}
-                >
-                  {skill.label}
-                </motion.div>
-              ))}
-            </div>
-          </ScrollReveal>
         </div>
       </div>
     </section>

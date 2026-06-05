@@ -29,20 +29,20 @@ export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: [
-    'bg-gradient-to-r from-gold-600 to-gold-500',
+    'bg-gradient-to-r from-mint-600 to-mint-500',
     'text-bg-primary font-semibold',
-    'hover:from-gold-500 hover:to-gold-400',
-    'shadow-[0_0_20px_rgba(212,175,55,0.15)]',
-    'hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]',
+    'hover:from-mint-500 hover:to-mint-400',
+    'shadow-[0_0_20px_rgba(16,185,129,0.15)]',
+    'hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]',
     'active:scale-[0.98]',
   ].join(' '),
   secondary: [
     'bg-transparent',
     'border border-border-gold',
-    'text-gold-400',
-    'hover:bg-gold-500/10',
+    'text-mint-400',
+    'hover:bg-mint-500/10',
     'hover:border-border-gold-strong',
-    'hover:shadow-[0_0_16px_rgba(212,175,55,0.1)]',
+    'hover:shadow-[0_0_16px_rgba(16,185,129,0.1)]',
     'active:scale-[0.98]',
   ].join(' '),
   ghost: [
@@ -54,7 +54,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   accent: [
     'bg-accent text-white font-semibold',
     'hover:bg-accent-hover',
-    'hover:shadow-[0_0_20px_rgba(59,130,246,0.25)]',
+    'hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]',
     'active:scale-[0.98]',
   ].join(' '),
 };
@@ -69,7 +69,7 @@ const baseStyles = [
   'inline-flex items-center justify-center',
   'font-body font-medium',
   'transition-all duration-300 ease-[var(--ease-premium)]',
-  'focus-visible:outline-2 focus-visible:outline-gold-500 focus-visible:outline-offset-2',
+  'focus-visible:outline-2 focus-visible:outline-mint-500 focus-visible:outline-offset-2',
   'disabled:opacity-50 disabled:pointer-events-none',
   'cursor-pointer select-none whitespace-nowrap',
   'hover:scale-[1.02]',

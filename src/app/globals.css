@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════
-   CAIO SOBRINHO — Dark Golden Premium Design System
+   CAIO SOBRINHO — Dark Mint Premium Design System
    Tailwind v4 CSS-first configuration
    ═══════════════════════════════════════════════════════════ */
 
@@ -15,12 +15,12 @@
   --color-bg-hover: #222222;
   --color-bg-input: #161616;
 
-  /* ═══ GOLD PALETTE ═══ */
-  --color-gold-300: #F4D978;
-  --color-gold-400: #E5C158;
-  --color-gold-500: #D4AF37;
-  --color-gold-600: #B8941F;
-  --color-gold-700: #96780F;
+  /* ═══ MINT PALETTE ═══ */
+  --color-mint-300: #6EE7B7;
+  --color-mint-400: #34D399;
+  --color-mint-500: #10B981;
+  --color-mint-600: #059669;
+  --color-mint-700: #047857;
 
   /* ═══ TEXT ═══ */
   --color-text-primary: #FFFFFF;
@@ -29,23 +29,23 @@
   --color-text-subtle: #666666;
 
   /* ═══ ACCENT ═══ */
-  --color-accent: #3B82F6;
-  --color-accent-hover: #60A5FA;
+  --color-accent: #10B981;
+  --color-accent-hover: #34D399;
 
   /* ═══ STATUS ═══ */
-  --color-success: #22C55E;
+  --color-success: #10B981;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
 
   /* ═══ BORDERS ═══ */
   --color-border: rgba(255, 255, 255, 0.06);
   --color-border-hover: rgba(255, 255, 255, 0.12);
-  --color-border-gold: rgba(212, 175, 55, 0.2);
-  --color-border-gold-strong: rgba(212, 175, 55, 0.4);
+  --color-border-gold: rgba(16, 185, 129, 0.2);
+  --color-border-gold-strong: rgba(16, 185, 129, 0.4);
 
   /* ═══ GLOWS ═══ */
-  --color-gold-glow: rgba(212, 175, 55, 0.15);
-  --color-gold-glow-strong: rgba(212, 175, 55, 0.3);
+  --color-gold-glow: rgba(16, 185, 129, 0.15);
+  --color-gold-glow-strong: rgba(16, 185, 129, 0.3);
 
   /* ═══ FONTS ═══ */
   --font-display: var(--font-outfit), "Outfit", system-ui, sans-serif;
@@ -78,7 +78,7 @@
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(16, 185, 129, 0.3);
   color: #FFFFFF;
 }
 
@@ -104,12 +104,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(16, 185, 129, 0.3);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.5);
+  background: rgba(16, 185, 129, 0.5);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -117,7 +117,7 @@ body {
    ═══════════════════════════════════════════════════════════ */
 
 :focus-visible {
-  outline: 2px solid var(--color-gold-500);
+  outline: 2px solid var(--color-mint-500);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -144,12 +144,12 @@ body {
   }
 }
 
-@keyframes pulse-gold {
+@keyframes pulse-mint {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+    box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
   }
 }
 
@@ -180,14 +180,14 @@ body {
    ═══════════════════════════════════════════════════════════ */
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #F4D978 0%, #D4AF37 50%, #E5C158 100%);
+  background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #34D399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .bg-gradient-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 50%, #F4D978 100%);
+  background: linear-gradient(135deg, #10B981 0%, #34D399 50%, #6EE7B7 100%);
 }
 
 .bg-gradient-dark {
@@ -202,19 +202,19 @@ body {
 }
 
 .bg-glass-gold {
-  background: rgba(212, 175, 55, 0.05);
+  background: rgba(16, 185, 129, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.15);
 }
 
 .glow-gold {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15),
-              0 0 60px rgba(212, 175, 55, 0.05);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.15),
+              0 0 60px rgba(16, 185, 129, 0.05);
 }
 
 .glow-gold-sm {
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
 }
 
 .border-gradient-gold {
@@ -229,7 +229,7 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.05), rgba(212, 175, 55, 0.3));
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.3));
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;

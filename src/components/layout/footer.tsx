@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="relative bg-bg-secondary" role="contentinfo">
       {/* Top gold gradient border */}
       <div
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/40 to-transparent"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-mint-500/40 to-transparent"
         aria-hidden="true"
       />
 
@@ -24,7 +24,7 @@ export function Footer() {
           <div className="space-y-5">
             <Link
               href="/"
-              className="inline-block font-display text-lg font-semibold tracking-wide text-gold-500 transition-colors duration-300 hover:text-gold-400"
+              className="inline-block font-display text-lg font-semibold tracking-wide text-mint-500 transition-colors duration-300 hover:text-mint-400"
               aria-label="Caio Sobrinho — Página inicial"
             >
               CAIO SOBRINHO
@@ -40,7 +40,7 @@ export function Footer() {
                 href={SOCIAL_LINKS.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-gold-500 hover:shadow-[0_0_12px_rgba(212,175,55,0.1)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-mint-500 hover:shadow-[0_0_12px_rgba(16,185,129,0.1)]"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-4 w-4" />
@@ -49,7 +49,7 @@ export function Footer() {
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-gold-500 hover:shadow-[0_0_12px_rgba(212,175,55,0.1)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-mint-500 hover:shadow-[0_0_12px_rgba(16,185,129,0.1)]"
                 aria-label="Instagram"
               >
                 <Instagram className="h-4 w-4" />
@@ -58,7 +58,7 @@ export function Footer() {
                 href={SOCIAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-gold-500 hover:shadow-[0_0_12px_rgba(212,175,55,0.1)]"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-bg-card text-text-muted transition-all duration-300 hover:border-border-gold hover:text-mint-500 hover:shadow-[0_0_12px_rgba(16,185,129,0.1)]"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -76,7 +76,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="group inline-flex items-center gap-1.5 text-sm text-text-muted transition-colors duration-300 hover:text-gold-500"
+                    className="group inline-flex items-center gap-1.5 text-sm text-text-muted transition-colors duration-300 hover:text-mint-500"
                   >
                     <span>{link.label}</span>
                     <ArrowUpRight className="h-3 w-3 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -99,7 +99,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-sm text-text-muted transition-colors duration-300 hover:text-text-primary"
                 >
-                  <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-gold-500/70 transition-colors duration-300 group-hover:text-gold-500" />
+                  <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-mint-500/70 transition-colors duration-300 group-hover:text-mint-500" />
                   <div>
                     <span className="block font-medium text-text-secondary group-hover:text-text-primary">
                       WhatsApp
@@ -116,7 +116,7 @@ export function Footer() {
                   href={`mailto:${SITE.email}`}
                   className="group flex items-start gap-3 text-sm text-text-muted transition-colors duration-300 hover:text-text-primary"
                 >
-                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold-500/70 transition-colors duration-300 group-hover:text-gold-500" />
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-mint-500/70 transition-colors duration-300 group-hover:text-mint-500" />
                   <div>
                     <span className="block font-medium text-text-secondary group-hover:text-text-primary">
                       E-mail

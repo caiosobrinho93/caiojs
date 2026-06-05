@@ -1,152 +1,102 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-// Shared easing curve
-const EASE = [0.16, 1, 0.3, 1] as const;
-
-// Decorative floating shapes that give the hero depth
-function FloatingShape({
-  className,
-  delay = 0,
-}: {
-  className?: string;
-  delay?: number;
-}) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.8, delay: delay + 1, ease: EASE as any }}
-      style={{ animation: `float ${6 + delay * 2}s ease-in-out infinite ${delay}s` }}
-      aria-hidden="true"
-    />
-  );
-}
+import { ArrowRight, Terminal, Settings, Database } from 'lucide-react';
 
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6"
-      aria-label="Seção principal"
+      className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24 lg:pt-20"
+      aria-label="Apresentação inicial"
     >
-      {/* ── Background: Radial gold glow ── */}
-      <div
-        className="absolute inset-0 -z-10"
+      {/* Background partition (dark and subtle green lights) */}
+      <div className="absolute inset-0 -z-20 bg-bg-primary" aria-hidden="true" />
+      
+      {/* Split background layout on desktop */}
+      <div 
+        className="absolute right-0 top-0 bottom-0 w-full lg:w-[45%] -z-10 bg-gradient-to-br from-mint-500/10 to-transparent lg:bg-mint-500 opacity-20 lg:opacity-100 transition-all"
+        style={{
+          clipPath: 'polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        }}
         aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-bg-primary" />
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 40%, transparent 70%)',
-          }}
-        />
-        {/* Subtle grain */}
-        <div className="grain-overlay absolute inset-0" />
-      </div>
-
-      {/* ── Decorative floating shapes ── */}
-      <FloatingShape
-        delay={0}
-        className="absolute top-[15%] left-[10%] w-16 h-16 border border-border-gold rounded-sm rotate-12 opacity-[0.12] hidden md:block"
-      />
-      <FloatingShape
-        delay={0.5}
-        className="absolute top-[20%] right-[12%] w-10 h-10 border border-border-gold rounded-full opacity-[0.1] hidden md:block"
-      />
-      <FloatingShape
-        delay={1}
-        className="absolute bottom-[25%] left-[18%] w-8 h-8 border border-border-gold rounded-full opacity-[0.08] hidden lg:block"
-      />
-      <FloatingShape
-        delay={1.5}
-        className="absolute bottom-[30%] right-[8%] w-14 h-14 border border-border-gold rounded-sm -rotate-6 opacity-[0.1] hidden md:block"
-      />
-      <FloatingShape
-        delay={0.8}
-        className="absolute top-[40%] right-[25%] w-6 h-6 border border-gold-500/30 rounded-sm rotate-45 opacity-[0.15] hidden lg:block"
-      />
-      <FloatingShape
-        delay={1.2}
-        className="absolute bottom-[40%] left-[8%] w-12 h-12 border border-gold-500/20 rounded-sm rotate-[20deg] opacity-[0.07] hidden lg:block"
       />
 
-      {/* ── Main content ── */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-        {/* Badge / Pill */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: EASE as any }}
-        >
-          <span className="inline-flex items-center px-4 py-1.5 mb-8 text-xs font-medium tracking-widest uppercase text-gold-400 bg-gold-500/8 border border-border-gold rounded-full">
-            Soluções Digitais &amp; Projetos
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10">
+        {/* ── Left Column: Text content ── */}
+        <div className="lg:col-span-7 flex flex-col items-start text-left">
+          {/* Small Badge */}
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase text-mint-400 bg-mint-500/8 border border-border-gold rounded-full">
+            <Terminal className="size-3.5" />
+            Olá, Eu Sou Caio Sobrinho
           </span>
-        </motion.div>
 
-        {/* Title */}
-        <motion.h1
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-gradient-gold"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: EASE as any }}
-        >
-          CAIO SOBRINHO
-        </motion.h1>
+          {/* Large Title */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-text-primary">
+            Desenvolvedor de
+            <br />
+            <span className="text-gradient-gold">Sistemas &amp; Projetos.</span>
+          </h1>
 
-        {/* Subtitle */}
-        <motion.p
-          className="mt-6 md:mt-8 text-text-secondary text-lg md:text-xl leading-relaxed max-w-2xl"
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: EASE as any }}
-        >
-          Transformando ideias em soluções digitais, sistemas inteligentes e
-          projetos reais.
-        </motion.p>
+          {/* Subtitle */}
+          <p className="mt-6 text-text-secondary text-base md:text-lg leading-relaxed max-w-xl">
+            Unindo visão sistêmica, tecnologia avançada e atenção milimétrica aos detalhes para estruturar automações, criar sistemas web e dar vida a projetos físicos sob medida.
+          </p>
 
-        {/* Buttons */}
-        <motion.div
-          className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.55, ease: EASE as any }}
-        >
-          <Button variant="primary" size="lg" href="/projetos">
-            Explorar Projetos
-          </Button>
-          <Button variant="secondary" size="lg" href="/contato">
-            Entrar em Contato
-          </Button>
-        </motion.div>
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Button variant="primary" size="md" href="/projetos" className="group">
+              Ver Portfólio
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+            <Button variant="secondary" size="md" href="/contato">
+              Entrar em Contato
+            </Button>
+          </div>
+        </div>
+
+        {/* ── Right Column: Photo/Graphics Placeholder ── */}
+        <div className="lg:col-span-5 relative flex items-center justify-center min-h-[350px] sm:min-h-[450px] lg:min-h-[500px]">
+          {/* Geometric floating outline decorations */}
+          <div className="absolute inset-0 -z-10 opacity-30 select-none pointer-events-none" aria-hidden="true">
+            {/* Hexagon shape outlines */}
+            <div className="absolute top-[10%] left-[5%] size-16 border border-mint-400/40 rounded-lg rotate-12" />
+            <div className="absolute bottom-[15%] right-[10%] size-24 border border-mint-500/30 rounded-full" />
+            <div className="absolute top-[50%] right-[5%] size-12 border border-mint-400/20 rounded-lg -rotate-45" />
+          </div>
+
+          {/* Portrait Mask/Graphic Box */}
+          <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-mint-400/20 bg-bg-card shadow-[0_0_50px_rgba(16,185,129,0.06)] group hover:border-mint-400/40 transition-all duration-500">
+            {/* Portrait inner background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-card to-bg-secondary -z-10" />
+            
+            {/* Split backdrop accent */}
+            <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-mint-500/10 -z-10" />
+
+            {/* Custom vector silhouette mockup representing professional */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 select-none pointer-events-none text-center">
+              <div className="size-20 rounded-full bg-mint-500/10 border border-mint-500/20 flex items-center justify-center text-mint-400 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Database className="size-10" />
+              </div>
+              <span className="font-display font-bold text-lg text-text-primary tracking-wide">
+                CAIO SOBRINHO
+              </span>
+              <p className="text-[10px] text-mint-400 font-bold uppercase tracking-wider mt-1">
+                Fullstack Developer &amp; Project Manager
+              </p>
+              
+              <div className="flex gap-2.5 mt-8 opacity-40 group-hover:opacity-65 transition-opacity">
+                <div className="size-8 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted">
+                  <Terminal className="size-4" />
+                </div>
+                <div className="size-8 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted">
+                  <Settings className="size-4" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* ── Scroll indicator ── */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
-      >
-        <span className="text-text-subtle text-xs tracking-widest uppercase">
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          <ChevronDown className="size-5 text-gold-500/60" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

@@ -77,8 +77,8 @@ export function Navbar() {
             className={cn(
               "font-display text-lg font-semibold tracking-wide",
               "transition-colors duration-500 ease-[var(--ease-premium)]",
-              isScrolled ? "text-gold-500" : "text-text-primary",
-              "hover:text-gold-400"
+              isScrolled ? "text-mint-500" : "text-text-primary",
+              "hover:text-mint-400"
             )}
             aria-label="Caio Sobrinho — Página inicial"
           >
@@ -96,7 +96,7 @@ export function Navbar() {
                     "relative px-4 py-2 text-sm font-medium tracking-wide",
                     "transition-colors duration-300 ease-[var(--ease-premium)]",
                     isActive(link.href)
-                      ? "text-gold-500"
+                      ? "text-mint-500"
                       : "text-text-muted hover:text-text-primary"
                   )}
                 >
@@ -107,7 +107,7 @@ export function Navbar() {
                     <span
                       className={cn(
                         "absolute bottom-0 left-1/2 h-px w-5 -translate-x-1/2",
-                        "bg-gradient-to-r from-transparent via-gold-500 to-transparent"
+                        "bg-gradient-to-r from-transparent via-mint-500 to-transparent"
                       )}
                       aria-hidden="true"
                     />
@@ -123,9 +123,9 @@ export function Navbar() {
                 "ml-4 inline-flex items-center justify-center",
                 "rounded-[var(--radius-button)] px-5 py-2",
                 "text-sm font-semibold tracking-wide",
-                "bg-gold-500 text-bg-primary",
+                "bg-mint-500 text-bg-primary",
                 "transition-all duration-300 ease-[var(--ease-premium)]",
-                "hover:bg-gold-400 hover:shadow-[0_0_20px_rgba(212,175,55,0.25)]",
+                "hover:bg-mint-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]",
                 "active:scale-[0.97]"
               )}
             >
@@ -141,7 +141,7 @@ export function Navbar() {
               "inline-flex items-center justify-center rounded-lg p-2 md:hidden",
               "text-text-muted transition-colors duration-200",
               "hover:bg-bg-hover hover:text-text-primary",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint-500"
             )}
             aria-label="Abrir menu"
             aria-expanded={isMobileMenuOpen}

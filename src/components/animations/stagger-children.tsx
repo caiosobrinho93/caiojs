@@ -16,7 +16,7 @@ const EASE_PREMIUM = [0.16, 1, 0.3, 1] as const;
 export function StaggerChildren({
   children,
   className,
-  staggerDelay = 0.1,
+  staggerDelay = 0.06,
   delayStart = 0,
 }: StaggerChildrenProps) {
   const containerVariants: Variants = {
@@ -47,13 +47,13 @@ export function StaggerChildren({
 const childVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 12,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.35,
       ease: EASE_PREMIUM as any,
     },
   },

@@ -26,19 +26,19 @@ export default function CTA() {
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10"
           style={{
             background:
-              'radial-gradient(circle, rgba(212,175,55,0.2) 0%, rgba(212,175,55,0.02) 50%, transparent 80%)',
+              'radial-gradient(circle, rgba(16,185,129,0.2) 0%, rgba(16,185,129,0.02) 50%, transparent 80%)',
           }}
         />
       </div>
 
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
-          <div className="relative p-12 md:p-16 lg:p-20 bg-bg-secondary border border-border-gold/30 rounded-[var(--radius-card)] text-center overflow-hidden group hover:border-border-gold/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(212,175,55,0.06)]">
+          <div className="relative p-12 md:p-16 lg:p-20 bg-bg-secondary border border-border-gold/30 rounded-[var(--radius-card)] text-center overflow-hidden group hover:border-border-gold/60 transition-all duration-500 hover:shadow-[0_0_50px_rgba(16,185,129,0.08)]">
             {/* Subtle light reflection sweep */}
-            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-gold-500/5 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-mint-500/5 to-transparent pointer-events-none" />
 
             <div className="relative z-10 max-w-2xl mx-auto">
-              <span className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-gold-400 bg-gold-500/8 border border-border-gold rounded-full">
+              <span className="inline-flex items-center px-4 py-1.5 mb-6 text-xs font-medium tracking-widest uppercase text-mint-400 bg-mint-500/8 border border-border-gold rounded-full">
                 Vamos Conversar?
               </span>
 

@@ -15,10 +15,10 @@ interface ScrollRevealProps {
 }
 
 const directionOffsets: Record<Direction, { x: number; y: number }> = {
-  up: { x: 0, y: 40 },
-  down: { x: 0, y: -40 },
-  left: { x: 40, y: 0 },
-  right: { x: -40, y: 0 },
+  up: { x: 0, y: 16 },
+  down: { x: 0, y: -16 },
+  left: { x: 16, y: 0 },
+  right: { x: -16, y: 0 },
 };
 
 const EASE_PREMIUM = [0.16, 1, 0.3, 1] as const;
@@ -28,7 +28,7 @@ export function ScrollReveal({
   className,
   delay = 0,
   direction = 'up',
-  duration = 0.6,
+  duration = 0.4,
 }: ScrollRevealProps) {
   const offset = directionOffsets[direction];
 
