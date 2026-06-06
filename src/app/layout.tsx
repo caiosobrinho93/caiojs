@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
+import InteractiveGrid from "@/components/shared/interactive-grid";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,6 +81,7 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable}`}
     >
       <body className="min-h-screen bg-bg-primary text-text-primary font-body antialiased">
+        <InteractiveGrid />
         {children}
       </body>
     </html>
