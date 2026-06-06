@@ -6,11 +6,8 @@ export default function InteractiveGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Check for mobile layout, touch screen, or accessibility preferences
-    const isMobile =
-      window.innerWidth < 768 ||
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0;
+    // Check for mobile layout or accessibility preferences
+    const isMobile = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia(
       '(prefers-reduced-motion: reduce)'
     ).matches;
