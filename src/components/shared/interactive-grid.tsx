@@ -12,18 +12,30 @@ export default function InteractiveGrid() {
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
+    console.log('InteractiveGrid: Checking environment...', { isMobile, prefersReducedMotion });
+
     if (isMobile || prefersReducedMotion) {
       document.body.classList.add('static-grid');
+      console.log('InteractiveGrid: Disabling canvas and activating static CSS grid fallback.');
       return;
     } else {
       document.body.classList.remove('static-grid');
+      console.log('InteractiveGrid: Activating canvas interactive grid.');
     }
 
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    console.log('InteractiveGrid: Canvas element reference:', canvas);
+    if (!canvas) {
+      console.warn('InteractiveGrid: Canvas reference not found!');
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    console.log('InteractiveGrid: Canvas 2D context retrieved:', ctx);
+    if (!ctx) {
+      console.warn('InteractiveGrid: Failed to get Canvas 2D context!');
+      return;
+    }
 
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -53,6 +65,7 @@ export default function InteractiveGrid() {
       cols = Math.ceil(width / GRID_SIZE) + 1;
       rows = Math.ceil(height / GRID_SIZE) + 1;
       points = [];
+      console.log(`InteractiveGrid: Initializing points grid [${cols} cols x ${rows} rows]. Canvas size: ${width}x${height}`);
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
           const x = c * GRID_SIZE;
@@ -82,13 +95,17 @@ export default function InteractiveGrid() {
       mouse.idle = false;
       lastMouseMove = Date.now();
 
+      console.log('InteractiveGrid: Mouse Move event coords:', { clientX: e.clientX, clientY: e.clientY });
+
       // Awake animation loop if sleeping
       if (!animationFrameId) {
+        console.log('InteractiveGrid: Waking up animation loop from sleep.');
         startLoop();
       }
     };
 
     const handleMouseLeave = () => {
+      console.log('InteractiveGrid: Mouse Left window.');
       mouse.active = false;
       mouse.x = -1000;
       mouse.y = -1000;
@@ -107,9 +124,15 @@ export default function InteractiveGrid() {
     };
     window.addEventListener('resize', handleResize);
 
+    let firstFrame = true;
     function updateAndDraw() {
       if (!ctx) return;
       ctx.clearRect(0, 0, width, height);
+
+      if (firstFrame) {
+        console.log('InteractiveGrid: First frame rendering context executing on canvas.');
+        firstFrame = false;
+      }
 
       const now = Date.now();
       if (now - lastMouseMove > 1500) {
