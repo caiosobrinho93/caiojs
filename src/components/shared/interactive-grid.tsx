@@ -6,11 +6,9 @@ export default function InteractiveGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Only enable on desktop screens where mouse hover is present
-    const isMobile = window.innerWidth < 768;
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
+    // Force bypass check for testing and development
+    const isMobile = false;
+    const prefersReducedMotion = false;
 
     console.log('InteractiveGrid: Checking environment...', { isMobile, prefersReducedMotion });
 
