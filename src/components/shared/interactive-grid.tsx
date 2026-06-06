@@ -34,8 +34,6 @@ export default function InteractiveGrid() {
     };
   }, []);
 
-  if (!active) return null;
-
   return (
     <div
       className="fixed inset-0 pointer-events-none -z-40 transition-opacity duration-500"
