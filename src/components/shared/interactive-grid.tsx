@@ -38,12 +38,12 @@ export default function InteractiveGrid() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Physics parameters for the gravity warp field
+    // Physics parameters for the gravity warp field (tuned for ultimate smoothness)
     const GRID_SIZE = 55;
-    const RADIUS = 180; // Mouse gravity influence radius
-    const FORCE = 40; // Bending force (pixels pulled towards mouse)
-    const STIFFNESS = 0.08; // Spring tension pulling points back
-    const DAMPING = 0.82; // Friction damping velocity
+    const RADIUS = 240; // Wider radius for gradual distortion transitions
+    const FORCE = 25; // Gentler pull force for subtle deformation
+    const STIFFNESS = 0.035; // Soft spring tension for slow, elegant returns
+    const DAMPING = 0.90; // Higher damping for smooth, fluid motion without bouncing
 
     let cols = Math.ceil(width / GRID_SIZE) + 1;
     let rows = Math.ceil(height / GRID_SIZE) + 1;
