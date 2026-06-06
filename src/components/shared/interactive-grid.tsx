@@ -287,7 +287,7 @@ export default function InteractiveGrid() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-50 pointer-events-none w-full h-full block"
+      className="fixed inset-0 -z-40 pointer-events-none w-full h-full block"
     />
   );
 }
