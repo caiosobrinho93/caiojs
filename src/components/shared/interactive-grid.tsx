@@ -7,13 +7,9 @@ export default function InteractiveGrid() {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    // Only enable effect on desktop screens where hover/mouse movement makes sense
+    // Enable only on desktop screens
     const isMobile = window.innerWidth < 768;
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
-
-    if (isMobile || prefersReducedMotion) return;
+    if (isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       setCoords({ x: e.clientX, y: e.clientY });
@@ -22,7 +18,6 @@ export default function InteractiveGrid() {
 
     const handleMouseLeave = () => {
       setActive(false);
-      setCoords({ x: -1000, y: -1000 });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -34,32 +29,27 @@ export default function InteractiveGrid() {
     };
   }, []);
 
+  if (!active) return null;
+
   return (
-    <div
-      className="fixed inset-0 pointer-events-none -z-40 transition-opacity duration-500"
-      style={{
-        opacity: active ? 1 : 0,
-        ['--mouse-x' as any]: `${coords.x}px`,
-        ['--mouse-y' as any]: `${coords.y}px`,
-      }}
-    >
+    <div className="fixed inset-0 pointer-events-none -z-40 overflow-hidden">
       {/* 1. Green emerald spotlight glow following the cursor */}
       <div
-        className="absolute inset-0 transition-opacity duration-300"
+        className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full w-[450px] h-[450px] pointer-events-none mix-blend-screen"
         style={{
+          left: `${coords.x}px`,
+          top: `${coords.y}px`,
           background:
-            'radial-gradient(circle 240px at var(--mouse-x) var(--mouse-y), rgba(16, 185, 129, 0.16) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 100%)',
+            'radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.04) 50%, transparent 100%)',
         }}
       />
 
-      {/* 2. Glassmorphism backdrop-blur lens that distorts/softens the grid lines */}
+      {/* 2. Glassmorphism backdrop-blur lens following the cursor */}
       <div
-        className="absolute inset-0 backdrop-blur-[4px]"
+        className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full w-[260px] h-[260px] backdrop-blur-[5px] border border-mint-500/10 pointer-events-none"
         style={{
-          WebkitMaskImage:
-            'radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), black 20%, transparent 100%)',
-          maskImage:
-            'radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), black 20%, transparent 100%)',
+          left: `${coords.x}px`,
+          top: `${coords.y}px`,
         }}
       />
     </div>
