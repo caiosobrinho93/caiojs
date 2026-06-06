@@ -89,6 +89,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+
+  /* Uiverse.io grid background + bottom spotlight glow */
+  --grid-color: rgba(114, 114, 114, 0.12);
+  background-image: 
+    radial-gradient(ellipse at 50% 100%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.08) 45%, rgba(16, 185, 129, 0.02) 65%, transparent 80%),
+    linear-gradient(0deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--grid-color) 25%, var(--grid-color) 26%, transparent 27%, transparent 74%, var(--grid-color) 75%, var(--grid-color) 76%, transparent 77%, transparent);
+  background-size: 100% 100%, 55px 55px, 55px 55px;
+  background-repeat: no-repeat, repeat, repeat;
+  background-attachment: fixed;
 }
 
 /* ═══════════════════════════════════════════════════════════

@@ -11,7 +11,7 @@ export default function Hero() {
       aria-label="Apresentação inicial"
     >
       {/* Background partition (dark and subtle green lights) */}
-      <div className="absolute inset-0 -z-20 bg-bg-primary" aria-hidden="true" />
+      <div className="absolute inset-0 -z-20 bg-transparent" aria-hidden="true" />
       
       {/* Split background layout on desktop */}
       <div 
