@@ -90,15 +90,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 
-  /* default background with only bottom spotlight glow (grid is rendered by canvas) */
-  background-image: radial-gradient(ellipse at 50% 100%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.08) 45%, rgba(16, 185, 129, 0.02) 65%, transparent 80%);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Fallback grid background for mobile, reduced-motion or canvas disabled */
-body.static-grid {
+  /* Uiverse.io grid background + bottom spotlight glow */
   --grid-color: rgba(114, 114, 114, 0.12);
   background-image: 
     radial-gradient(ellipse at 50% 100%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0.08) 45%, rgba(16, 185, 129, 0.02) 65%, transparent 80%),
