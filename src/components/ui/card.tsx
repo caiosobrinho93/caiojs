@@ -19,19 +19,19 @@ const variantStyles: Record<CardVariant, string> = {
   gold: [
     'bg-bg-card',
     'border border-border-gold',
-    'shadow-[0_0_30px_rgba(16,185,129,0.08)]',
+    'shadow-[0_0_30px_rgba(183,214,0,0.09)]',
   ].join(' '),
 };
 
 const hoverDefault = [
   'hover:border-border-hover',
-  'hover:shadow-[0_0_20px_rgba(16,185,129,0.08)]',
+  'hover:shadow-[0_0_20px_rgba(183,214,0,0.09)]',
   'hover:translate-y-[-2px]',
 ];
 
 const hoverGold = [
   'hover:border-border-gold-strong',
-  'hover:shadow-[0_0_40px_rgba(16,185,129,0.15)]',
+  'hover:shadow-[0_0_40px_rgba(183,214,0,0.17)]',
   'hover:translate-y-[-2px]',
 ];
 

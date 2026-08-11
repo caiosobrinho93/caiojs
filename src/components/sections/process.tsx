@@ -65,7 +65,7 @@ export default function Process() {
                       delay={0.15}
                     >
                       <div
-                        className={`p-8 bg-bg-card border border-border hover:border-border-gold-strong rounded-[var(--radius-card)] transition-all duration-300 relative group hover:shadow-[0_0_30px_rgba(16,185,129,0.06)] ${
+                        className={`p-8 bg-bg-card border border-border hover:border-border-gold-strong rounded-[var(--radius-card)] transition-all duration-300 relative group hover:shadow-[0_0_30px_rgba(183,214,0,0.07)] ${
                           isEven ? 'md:text-right' : 'md:text-left'
                         }`}
                       >

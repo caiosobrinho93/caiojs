@@ -84,28 +84,28 @@ function AreaCard({ area, isFirst }: { area: AreaItem; isFirst: boolean }) {
 
   if (isFirst) {
     return (
-      <Card variant="default" className="group relative h-full bg-mint-600 border-none shadow-[0_0_30px_rgba(16,185,129,0.25)] transition-all duration-300 hover:translate-y-[-2px]">
-        <CardContent className="flex flex-col gap-4 p-6 text-white h-full justify-between">
+      <Card variant="default" className="group relative h-full bg-mint-500 border-none shadow-[0_0_30px_rgba(183,214,0,0.25)] transition-all duration-300 hover:translate-y-[-2px]">
+        <CardContent className="flex flex-col gap-4 p-6 text-bg-primary h-full justify-between">
           <div className="flex flex-col gap-4">
             {/* Icon */}
             <div className="flex items-center justify-between">
-              <div className="flex items-center justify-center w-11 h-11 rounded-[var(--radius-badge)] bg-white/20 border border-white/30 transition-all duration-300">
-                <Icon className="size-5 text-white" />
+              <div className="flex items-center justify-center w-11 h-11 rounded-[var(--radius-badge)] bg-bg-primary/12 border border-bg-primary/25 transition-all duration-300">
+                <Icon className="size-5 text-bg-primary" />
               </div>
               {area.badge && (
-                <Badge variant="outline" className="text-[10px] text-white border-white/30 bg-white/10">
+                <Badge variant="outline" className="text-[10px] text-bg-primary border-bg-primary/25 bg-bg-primary/8">
                   {area.badge}
                 </Badge>
               )}
             </div>
 
             {/* Title */}
-            <h3 className="font-display text-base font-semibold text-white tracking-tight">
+            <h3 className="font-display text-base font-semibold text-bg-primary tracking-tight">
               {area.name}
             </h3>
 
             {/* Description */}
-            <p className="text-emerald-50/90 text-sm leading-relaxed">
+            <p className="text-bg-primary/75 text-sm leading-relaxed">
               {area.description}
             </p>
           </div>
@@ -119,7 +119,7 @@ function AreaCard({ area, isFirst }: { area: AreaItem; isFirst: boolean }) {
       <CardContent className="flex flex-col gap-4 p-6">
         {/* Icon */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-center w-11 h-11 rounded-[var(--radius-badge)] bg-mint-500/10 border border-border-gold/30 transition-all duration-300 group-hover:bg-mint-500/15 group-hover:shadow-[0_0_16px_rgba(16,185,129,0.12)]">
+          <div className="flex items-center justify-center w-11 h-11 rounded-[var(--radius-badge)] bg-mint-500/10 border border-border-gold/30 transition-all duration-300 group-hover:bg-mint-500/15 group-hover:shadow-[0_0_16px_rgba(183,214,0,0.14)]">
             <Icon className="size-5 text-mint-400" />
           </div>
           {area.badge && (

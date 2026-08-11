@@ -32,8 +32,8 @@ const variantStyles: Record<ButtonVariant, string> = {
     'bg-gradient-to-r from-mint-600 to-mint-500',
     'text-bg-primary font-semibold',
     'hover:from-mint-500 hover:to-mint-400',
-    'shadow-[0_0_20px_rgba(16,185,129,0.15)]',
-    'hover:shadow-[0_0_30px_rgba(16,185,129,0.25)]',
+    'shadow-[0_0_20px_rgba(183,214,0,0.17)]',
+    'hover:shadow-[0_0_30px_rgba(183,214,0,0.28)]',
     'active:scale-[0.98]',
   ].join(' '),
   secondary: [
@@ -42,7 +42,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     'text-mint-400',
     'hover:bg-mint-500/10',
     'hover:border-border-gold-strong',
-    'hover:shadow-[0_0_16px_rgba(16,185,129,0.1)]',
+    'hover:shadow-[0_0_16px_rgba(183,214,0,0.12)]',
     'active:scale-[0.98]',
   ].join(' '),
   ghost: [
@@ -52,9 +52,9 @@ const variantStyles: Record<ButtonVariant, string> = {
     'hover:bg-bg-hover',
   ].join(' '),
   accent: [
-    'bg-accent text-white font-semibold',
+    'bg-accent text-bg-primary font-semibold',
     'hover:bg-accent-hover',
-    'hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]',
+    'hover:shadow-[0_0_20px_rgba(183,214,0,0.28)]',
     'active:scale-[0.98]',
   ].join(' '),
 };

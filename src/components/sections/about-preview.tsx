@@ -29,7 +29,7 @@ export default function AboutPreview() {
             />
             
             {/* Professional profile avatar card */}
-            <div className="relative size-48 sm:size-56 rounded-full border-2 border-mint-500 bg-bg-card flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+            <div className="relative size-48 sm:size-56 rounded-full border-2 border-mint-500 bg-bg-card flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(183,214,0,0.12)]">
               {/* Silhouette Vector avatar */}
               <div className="flex flex-col items-center text-center p-4">
                 <Briefcase className="size-12 text-mint-400 mb-2" />

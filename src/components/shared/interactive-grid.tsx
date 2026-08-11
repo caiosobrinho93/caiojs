@@ -193,8 +193,8 @@ export default function InteractiveGrid() {
           mouse.y,
           RADIUS
         );
-        glow.addColorStop(0, 'rgba(16, 185, 129, 0.12)');
-        glow.addColorStop(0.5, 'rgba(16, 185, 129, 0.03)');
+        glow.addColorStop(0, 'rgba(183, 214, 0, 0.12)');
+        glow.addColorStop(0.5, 'rgba(183, 214, 0, 0.03)');
         glow.addColorStop(1, 'transparent');
         ctx.fillStyle = glow;
         ctx.beginPath();
@@ -245,7 +245,7 @@ export default function InteractiveGrid() {
 
             if (dist < RADIUS) {
               const alpha = (1 - dist / RADIUS) * 0.45;
-              ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+              ctx.strokeStyle = `rgba(183, 214, 0, ${alpha})`;
               ctx.lineWidth = 1.3;
               ctx.beginPath();
               ctx.moveTo(p1.x, p1.y);
@@ -269,7 +269,7 @@ export default function InteractiveGrid() {
 
             if (dist < RADIUS) {
               const alpha = (1 - dist / RADIUS) * 0.45;
-              ctx.strokeStyle = `rgba(16, 185, 129, ${alpha})`;
+              ctx.strokeStyle = `rgba(183, 214, 0, ${alpha})`;
               ctx.lineWidth = 1.3;
               ctx.beginPath();
               ctx.moveTo(p1.x, p1.y);

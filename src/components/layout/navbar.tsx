@@ -125,7 +125,7 @@ export function Navbar() {
                 "text-sm font-semibold tracking-wide",
                 "bg-mint-500 text-bg-primary",
                 "transition-all duration-300 ease-[var(--ease-premium)]",
-                "hover:bg-mint-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]",
+                "hover:bg-mint-400 hover:shadow-[0_0_20px_rgba(183,214,0,0.28)]",
                 "active:scale-[0.97]"
               )}
             >

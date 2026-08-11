@@ -66,7 +66,7 @@ export default function Hero() {
           </div>
 
           {/* Portrait card */}
-          <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-mint-400/20 bg-bg-card shadow-[0_0_50px_rgba(16,185,129,0.06)] group hover:border-mint-400/40 transition-all duration-500">
+          <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-mint-400/20 bg-bg-card shadow-[0_0_50px_rgba(183,214,0,0.08)] group hover:border-mint-400/40 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-card to-bg-secondary -z-10" />
             <div className="absolute inset-y-0 right-0 w-1/2 bg-mint-500/10" />
             <Image
