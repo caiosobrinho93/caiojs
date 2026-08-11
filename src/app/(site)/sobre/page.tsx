@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Brain, Target, BookOpen, ChevronRight, Award } from 'lucide-react';
+import { Brain, Target, BookOpen } from 'lucide-react';
+import { CAREER_EXPERIENCES, MATERIAL_SKILLS } from '@/lib/portfolio-data';
 
 export const metadata: Metadata = {
   title: 'Sobre',
@@ -12,34 +13,34 @@ export const metadata: Metadata = {
 
 const TIMELINE_EVENTS = [
   {
-    year: '2018',
-    title: 'Início na Marcenaria Planejada',
+    year: '2011',
+    title: 'Base em Produção',
     description:
-      'Desenvolvimento de visão espacial, precisão milimétrica e entendimento de projetos físicos sob medida.',
+      'Início profissional na Munhoz Metalúrgica, desenvolvendo disciplina de produção, organização e trabalho em equipe.',
   },
   {
-    year: '2020',
-    title: 'Design Gráfico & Edição de Vídeo',
+    year: '2013',
+    title: 'Entrada nos Planejados',
     description:
-      'Transição para a criação digital, desenvolvendo forte senso estético, branding e storytelling visual.',
+      'Atuação na Linea Planejados e construção da base prática em materiais, montagem e acabamento.',
   },
   {
-    year: '2022',
-    title: 'Desenvolvimento Web & Sistemas',
+    year: '2015',
+    title: 'Experiência Comercial',
     description:
-      'Entrada na programação e desenvolvimento fullstack. Criação dos primeiros sites e aplicações web.',
+      'Desenvolvimento de comunicação, negociação e atendimento consultivo como vendedor externo na Sky e na Vivo.',
   },
   {
-    year: '2024',
-    title: 'Automações & Dashboards',
+    year: '2019',
+    title: 'Especialização em Marcenaria',
     description:
-      'Foco em inteligência de negócios. Desenvolvimento de integrações complexas, automação de fluxos e painéis de dados.',
+      'Consolidação na Ark Móveis, Carnelian e Di Botelho com produção, interpretação e execução de móveis planejados.',
   },
   {
-    year: '2026',
-    title: 'Profissional Digital Multifuncional',
+    year: 'Atual',
+    title: 'Soluções Digitais & Projetos',
     description:
-      'Consolidação de competências híbridas para projetar, desenvolver e entregar soluções tecnológicas completas de ponta a ponta.',
+      'Aplicação da visão prática e sistêmica em desenvolvimento web, automações, interfaces e soluções digitais de ponta a ponta.',
   },
 ];
 
@@ -68,7 +69,7 @@ const SKILLS = [
   { category: 'Desenvolvimento', items: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Supabase', 'Bubble.io', 'Tailwind CSS'] },
   { category: 'Projetos & Processos', items: ['Gestão Ágil', 'Mapeamento de Requisitos', 'Arquitetura de Dados', 'Automações No-Code'] },
   { category: 'Visual & Design', items: ['UI/UX Design', 'Figma', 'Identidade Visual', 'Edição de Vídeos', 'Motion Design'] },
-  { category: 'Físico/Material', items: ['Marcenaria Planejada', 'Desenho Técnico', 'Otimização de Espaços', 'Modelagem 3D'] },
+  { category: 'Físico/Material', items: [...MATERIAL_SKILLS] },
 ];
 
 export default function SobrePage() {
@@ -106,12 +107,12 @@ export default function SobrePage() {
           <div className="md:col-span-8 text-text-secondary space-y-6 text-base md:text-lg leading-relaxed">
             <ScrollReveal delay={0.1}>
               <p>
-                Minha carreira começou no mundo físico, lidando com a complexidade da <strong>Marcenaria Planejada</strong> por 8 anos. Ali, aprendi que errar um milímetro compromete toda a estrutura. Essa exigência de precisão e planejamento estruturado formou minha base profissional.
+                Minha carreira começou em 2011 no mundo da produção e ganhou forma na <strong>Marcenaria Planejada</strong>. Passei por Linea Planejados, Ark Móveis, Carnelian e Di Botelho, construindo uma base sólida em materiais, montagem, acabamento e leitura de projetos.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p>
-                Naturalmente, migrei esse foco para o design e a tecnologia. Integrei habilidades de <strong>Design de Interface (UI/UX)</strong>, edição cinematográfica de vídeo e, finalmente, <strong>Desenvolvimento Web Fullstack</strong>.
+                Entre essas etapas, a experiência comercial na Sky e na Vivo fortaleceu minha comunicação, negociação e entendimento das necessidades do cliente. Naturalmente, levei esse repertório para o design e para o <strong>Desenvolvimento Web Fullstack</strong>.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
@@ -120,6 +121,51 @@ export default function SobrePage() {
               </p>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* ── Detailed professional experience ── */}
+      <section className="px-6 max-w-6xl mx-auto mb-32">
+        <div className="mb-14 md:flex md:items-end md:justify-between md:gap-12">
+          <ScrollReveal>
+            <div>
+              <span className="mb-5 inline-flex rounded-full border border-border-gold bg-mint-500/8 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-mint-400">
+                Experiência
+              </span>
+              <h2 className="font-display text-3xl font-bold text-text-primary md:text-4xl">
+                Trajetória <span className="text-gradient-gold">profissional</span>
+              </h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.08}>
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-text-muted md:mt-0 md:text-right">
+              Uma carreira construída entre produção, atendimento, projetos e execução — experiências que hoje orientam cada solução digital.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        <div className="divide-y divide-border border-y border-border">
+          {CAREER_EXPERIENCES.map((experience, index) => (
+            <div key={`${experience.company}-${experience.period}`} className="grid gap-5 py-8 md:grid-cols-[11rem_1fr] md:gap-10">
+              <ScrollReveal delay={index * 0.04}>
+                <p className="font-display text-sm font-bold text-mint-400">{experience.period}</p>
+              </ScrollReveal>
+              <ScrollReveal delay={index * 0.04 + 0.04}>
+                <div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <h3 className="font-display text-xl font-bold text-text-primary">{experience.role}</h3>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-text-muted">{experience.company}</p>
+                  </div>
+                  <p className="mt-3 max-w-3xl text-sm leading-relaxed text-text-secondary">{experience.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {experience.skills.map((skill) => (
+                      <Badge key={skill} variant="outline">{skill}</Badge>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          ))}
         </div>
       </section>
 

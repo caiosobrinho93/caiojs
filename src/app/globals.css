@@ -193,6 +193,11 @@ body.static-grid {
   90% { transform: translate(-10%, 10%); }
 }
 
+@keyframes project-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
 /* ═══════════════════════════════════════════════════════════
    UTILITY CLASSES
    ═══════════════════════════════════════════════════════════ */
@@ -277,6 +282,91 @@ body.static-grid {
   animation: shimmer 3s ease-in-out infinite;
 }
 
+.project-marquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.project-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  padding-inline: 0.75rem;
+  animation: project-marquee-scroll 38s linear infinite;
+  will-change: transform;
+}
+
+.project-marquee:hover .project-marquee__track {
+  animation-play-state: paused;
+}
+
+.project-marquee__card {
+  width: clamp(17rem, 32vw, 28rem);
+  flex: 0 0 auto;
+}
+
+.project-marquee__image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: var(--color-bg-card);
+}
+
+.project-marquee__image {
+  object-fit: cover;
+  transition: transform 700ms var(--ease-premium), filter 700ms var(--ease-premium);
+}
+
+.project-marquee__card:hover .project-marquee__image {
+  transform: scale(1.045);
+  filter: saturate(1.08);
+}
+
+.project-marquee__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 13, 13, 0.9), transparent 58%);
+  pointer-events: none;
+}
+
+.project-marquee__number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.66);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.project-marquee__caption {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+}
+
+.project-marquee__caption p {
+  color: var(--color-mint-400);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.project-marquee__caption h3 {
+  margin-top: 0.25rem;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+}
+
 /* ═══════════════════════════════════════════════════════════
    REDUCED MOTION
    ═══════════════════════════════════════════════════════════ */
@@ -289,5 +379,15 @@ body.static-grid {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .project-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .project-marquee__track {
+    animation: none;
   }
 }

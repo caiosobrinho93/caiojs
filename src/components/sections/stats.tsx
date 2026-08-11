@@ -11,15 +11,13 @@ export default function Stats() {
       aria-label="Estatísticas de impacto"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-border">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-border">
           {STATS_DEFAULT.map((stat, index) => {
             const targetNum = parseInt(stat.value, 10) || 0;
             return (
               <div
                 key={stat.label}
-                className={`flex flex-col items-center text-center justify-center p-4 ${
-                  index % 2 === 0 ? '' : 'pt-12 lg:pt-4'
-                } ${index >= 2 ? 'pt-12 lg:pt-4' : ''}`}
+                className={`flex flex-col items-center justify-center p-4 text-center ${index > 0 ? 'pt-12 sm:pt-4' : ''}`}
               >
                 <ScrollReveal delay={index * 0.1}>
                   <div className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gradient-gold">

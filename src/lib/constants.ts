@@ -63,6 +63,5 @@ export const PROCESS_STEPS = [
 export const STATS_DEFAULT = [
   { label: "Projetos Realizados", value: "50", suffix: "+" },
   { label: "Anos em Projetos", value: "6", suffix: "+" },
-  { label: "Anos em Marcenaria", value: "8", suffix: "+" },
-  { label: "Áreas de Atuação", value: "8", suffix: "" },
+  { label: "Clientes Satisfeitos", value: "30", suffix: "+" },
 ] as const;

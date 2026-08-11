@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Terminal, Settings, Database } from 'lucide-react';
+import { ArrowRight, Terminal } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -65,34 +65,24 @@ export default function Hero() {
             <div className="absolute top-[50%] right-[5%] size-12 border border-mint-400/20 rounded-lg -rotate-45" />
           </div>
 
-          {/* Portrait Mask/Graphic Box */}
+          {/* Portrait card */}
           <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-mint-400/20 bg-bg-card shadow-[0_0_50px_rgba(16,185,129,0.06)] group hover:border-mint-400/40 transition-all duration-500">
-            {/* Portrait inner background */}
             <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary via-bg-card to-bg-secondary -z-10" />
-            
-            {/* Split backdrop accent */}
-            <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-mint-500/10 -z-10" />
-
-            {/* Custom vector silhouette mockup representing professional */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 select-none pointer-events-none text-center">
-              <div className="size-20 rounded-full bg-mint-500/10 border border-mint-500/20 flex items-center justify-center text-mint-400 mb-6 group-hover:scale-110 transition-transform duration-500">
-                <Database className="size-10" />
-              </div>
-              <span className="font-display font-bold text-lg text-text-primary tracking-wide">
-                CAIO SOBRINHO
-              </span>
-              <p className="text-[10px] text-mint-400 font-bold uppercase tracking-wider mt-1">
-                Fullstack Developer &amp; Project Manager
+            <div className="absolute inset-y-0 right-0 w-1/2 bg-mint-500/10" />
+            <Image
+              src="/images/caiosobrinho.png"
+              alt="Retrato de Caio Sobrinho"
+              fill
+              priority
+              sizes="(max-width: 1024px) 360px, 30vw"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.025]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-transparent to-transparent" />
+            <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/10 bg-bg-primary/65 px-4 py-3 backdrop-blur-md">
+              <span className="font-display text-sm font-bold tracking-wide text-text-primary">CAIO SOBRINHO</span>
+              <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.16em] text-mint-400">
+                Fullstack Developer &amp; Projetista
               </p>
-              
-              <div className="flex gap-2.5 mt-8 opacity-40 group-hover:opacity-65 transition-opacity">
-                <div className="size-8 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted">
-                  <Terminal className="size-4" />
-                </div>
-                <div className="size-8 rounded-lg bg-bg-secondary border border-border flex items-center justify-center text-text-muted">
-                  <Settings className="size-4" />
-                </div>
-              </div>
             </div>
           </div>
         </div>

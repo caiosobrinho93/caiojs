@@ -1,10 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { ArrowRight, Hammer, Briefcase, Calendar, Phone } from 'lucide-react';
 import { ScrollReveal } from '@/components/animations/scroll-reveal';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { getWhatsAppUrl } from '@/lib/utils';
 import { SITE } from '@/lib/constants';
 
@@ -45,7 +43,7 @@ export default function AboutPreview() {
                 <Hammer className="size-4" />
               </div>
               <div>
-                <p className="text-xs font-bold text-text-primary">8+ Anos</p>
+                <p className="text-xs font-bold text-text-primary">6+ Anos</p>
                 <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Marcenaria</p>
               </div>
             </div>
@@ -57,7 +55,7 @@ export default function AboutPreview() {
               </div>
               <div>
                 <p className="text-xs font-bold text-text-primary">50+ Entregas</p>
-                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Projetos Ativos</p>
+                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Projetos Realizados</p>
               </div>
             </div>
 
@@ -68,7 +66,7 @@ export default function AboutPreview() {
               </div>
               <div>
                 <p className="text-xs font-bold text-text-primary">6+ Anos</p>
-                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Gestão Projetos</p>
+                <p className="text-[9px] text-text-muted font-medium uppercase tracking-wider">Experiência em Projetos</p>
               </div>
             </div>
           </div>
@@ -89,13 +87,13 @@ export default function AboutPreview() {
 
             <ScrollReveal delay={0.1}>
               <p className="mt-6 text-text-secondary text-sm md:text-base leading-relaxed">
-                Sou um profissional multifuncional que atua na intersecção entre design digital, tecnologia web e gestão. Com 8 anos de experiência consolidada em marcenaria planejada física e 6 anos coordenando projetos, trago a mentalidade de precisão milimétrica e planejamento rigoroso para o ambiente de software.
+                Sou um profissional multifuncional que atua na intersecção entre projetos, execução física e tecnologia. Minha trajetória começou em ambientes de produção e evoluiu pela marcenaria planejada, atendimento consultivo, design e desenvolvimento de sistemas.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.15}>
               <p className="mt-4 text-text-muted text-xs md:text-sm leading-relaxed">
-                Desenvolvo sistemas de alta performance, painéis dinâmicos e fluxos automatizados inteligentes focados no resultado real do negócio. Meu compromisso é alinhar design polido e código limpo para entregar produtos que resolvem problemas com excelência de ponta a ponta.
+                Hoje desenvolvo sistemas, painéis dinâmicos e automações orientadas a resultados. Levo para o digital o mesmo compromisso com precisão, organização, acabamento e satisfação do cliente que construí em projetos reais.
               </p>
             </ScrollReveal>
 
